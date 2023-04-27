@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    uses: actions/setup-node@v2
     defaults:
       run:
         working-directory: ./appteste
@@ -22,6 +23,7 @@ jobs:
   
   test:
     runs-on: ubuntu-latest
+    uses: actions/setup-node@v2
     defaults:
       run:
         working-directory: ./appteste
