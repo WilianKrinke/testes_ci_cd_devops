@@ -13,16 +13,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        cd ..
-        cd appteste
-        pwd
-        echo pwd
-       
+    - run: npm run build
 
     
   
   test:
     runs-on: ubuntu-latest  
     steps:
-      - run: pwd
+      - run: npm run test
