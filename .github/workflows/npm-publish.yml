@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-      - run: ./testes_ci_cd_devops
+      - run: cd ./testes_ci_cd_devops
       - run: npm i
       - run: npm run build
 
