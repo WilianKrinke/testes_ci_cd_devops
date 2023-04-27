@@ -14,9 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: cd /apptest
     - run: npm run build 
+    
   
   test:
     runs-on: ubuntu-latest    
     steps:
+      - run: cd /apptest
       - run: npm test
