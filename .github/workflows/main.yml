@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./appteste
+        working-directory: appteste
 
     steps:
     - run: npm run build 
@@ -24,6 +24,6 @@ jobs:
     runs-on: ubuntu-latest  
     defaults:
       run:
-        working-directory: ./appteste
+        working-directory: appteste
     steps:
       - run: npm test
