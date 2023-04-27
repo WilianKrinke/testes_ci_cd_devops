@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - run: |
-        cd appteste
+        cd ../appteste
     - run: npm run build 
     
   
