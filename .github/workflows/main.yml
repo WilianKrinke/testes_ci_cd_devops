@@ -12,12 +12,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: appteste
     steps:
     - run: npm run build
 
     
   
   test:
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: appteste
     steps:
       - run: npm run test
