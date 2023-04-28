@@ -23,6 +23,7 @@ jobs:
         with:
             node-version: 20
       - name: Testes
+        working-directory: ./testes_ci_cd_devops
         run: npm run test
 
   deploy:
