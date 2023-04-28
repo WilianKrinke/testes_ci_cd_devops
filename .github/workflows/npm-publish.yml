@@ -24,5 +24,5 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel
       - name: Deploy
-        run: vercel --token=$VERCEL_TOKEN --prod
+        run: echo $VERCEL_PROJECT_ID
      
