@@ -8,13 +8,14 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   deploy:
     name: vercel-deploy
     env:
-      VERCEL_ORG_ID: ${VERCEL_ORG_ID}
-      VERCEL_PROJECT_ID: ${VERCEL_PROJECT_ID}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,8 +24,6 @@ jobs:
       - name: Vercel Login
         run: vercel --token ${VERCEL_TOKEN}
       - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${VERCEL_TOKEN}
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
       - name: Build Project Artifacts
-        run: vercel build --prod --token=${VERCEL_TOKEN}
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${VERCEL_TOKEN}
+        run: vercel vercel build --token=${{ secrets.VERCEL_TOKEN }}
