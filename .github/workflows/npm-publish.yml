@@ -24,16 +24,18 @@ jobs:
             node-version: 20
       - name: Testes
         working-directory: ./testes_ci_cd_devops
-        run: npm test
+        run: |
+          npm i
+          npm test
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-            node-version: 20
-      - name: Vercel Install
-        run: npm install vercel -g      
-      - name: Vercel deploy
-        run: vercel --cwd ./testes_ci_cd_devops --token ${{ env.VERCEL_TOKEN }} --prod
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #           node-version: 20
+  #     - name: Vercel Install
+  #       run: npm install vercel -g      
+  #     - name: Vercel deploy
+  #       run: vercel --cwd ./testes_ci_cd_devops --token ${{ env.VERCEL_TOKEN }} --prod
      
