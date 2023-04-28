@@ -22,5 +22,5 @@ jobs:
         with:
             node-version: 20
       - name: Deploy
-        run: echo ${{ env.VERCEL_PROJECT_ID }}
+        run: echo $VERCEL_PROJECT_ID
      
