@@ -5,6 +5,7 @@ name: Node.js Package
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
 on:
   push:
@@ -19,8 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Vercel CLI
-        run: npm install --global vercel@canary
-      - name: Pull Vercel Environment Information
-        run: vercel --force pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      - name: Build Project Artifacts
-        run: vercel --force build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npm install --global vercel
+      - name: Deploy
+        run: vercel --token $VERCEL_TOKEN --prod
+     
