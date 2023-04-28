@@ -19,8 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+            node-version: 20
       - name: Install Vercel CLI
         run: npm install --global vercel
       - name: Deploy
-        run: vercel --token $VERCEL_TOKEN --prod
+        run: vercel --token=$VERCEL_TOKEN --prod
      
