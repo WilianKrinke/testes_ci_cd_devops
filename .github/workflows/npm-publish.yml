@@ -24,5 +24,5 @@ jobs:
       - name: Vercel Install
         run: npm install vercel -g      
       - name: Vercel deploy
-        run: vercel --token ${{ env.VERCEL_TOKEN }} --prod
+        run: vercel --cwd ./testes_ci_cd_devops --token ${{ env.VERCEL_TOKEN }} --prod
      
