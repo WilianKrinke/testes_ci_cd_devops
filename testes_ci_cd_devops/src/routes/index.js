@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
-import ListPage from "../pages/ListPage/index.js";
+import ListPage from "../pages/ListPage/index.jsx";
 
 const Index = () => {
   return (

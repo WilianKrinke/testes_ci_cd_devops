@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+import '../styles.css'
 import getDatas from "../../utils/getDatasFromApi/getDatasFromApi";
+import HeaderComponent from "../../components/headerComponent";
+import FooterComponent from "../../components/footerComponent";
 
 const Index = () => {
   const [apiDatas, setapiDatas] = useState([]);
@@ -22,15 +25,18 @@ const Index = () => {
         <h1>Loading...</h1>
       ) : (
         <>
-          <h1>List Page</h1>
-          <br />
-          {apiDatas.map((item) => {
-            return (
-              <div key={item._id}>
-                <h3>{item.name}</h3>
-              </div>
-            );
-          })}
+          <HeaderComponent />
+          <main className="main_general_style">
+            <br />
+            {apiDatas.map((item) => {
+              return (
+                <div key={item._id}>
+                  <h3>{item.name}</h3>
+                </div>
+              );
+            })}
+          </main>
+          <FooterComponent />
         </>
       )}
     </>
