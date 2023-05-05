@@ -1,11 +1,11 @@
 import React from "react";
 import './header.css'
 
-const Index = () => {
+const Index = ({title}) => {
   return (
     <>
       <header className="header_component">
-        <h1>Listagem</h1>
+        <h1>{title}</h1>
       </header>
     </>
   );
