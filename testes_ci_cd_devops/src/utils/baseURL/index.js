@@ -1,5 +1,9 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: 'https://api-teste-cors.vercel.app/'
+    // Production
+    // baseURL: 'https://api-teste-cors.vercel.app/' 
+
+    // DEV
+    baseURL: 'http://localhost:8080' 
 })
