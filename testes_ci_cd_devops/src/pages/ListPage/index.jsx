@@ -25,7 +25,7 @@ const Index = () => {
         <h1>Loading...</h1>
       ) : (
         <>
-          <HeaderComponent title={'Listagem'}/>
+          <HeaderComponent title={"Listagem"} />
           <main className="main_general_style">
             <section className="main_section_1">
               {apiDatas.map((item) => {
