@@ -6,7 +6,9 @@ const Index = ({title}) => {
     <>
       <header className="header_component">
         <h1>{title}</h1>
+        
       </header>
+       
     </>
   );
 };

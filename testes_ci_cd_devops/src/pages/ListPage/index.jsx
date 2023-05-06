@@ -3,6 +3,7 @@ import "../styles.css";
 import getDatas from "../../utils/getDatasFromApi/getDatasFromApi";
 import HeaderComponent from "../../components/headerComponent";
 import FooterComponent from "../../components/footerComponent";
+import Menu from '../../components/menuComponent/index'
 
 const Index = () => {
   const [apiDatas, setapiDatas] = useState([]);
@@ -25,7 +26,8 @@ const Index = () => {
         <h1>Loading...</h1>
       ) : (
         <>
-          <HeaderComponent title={"Listagem"} />
+          <Menu />
+          <HeaderComponent title={"Listagem"} />             
           <main className="main_general_style">
             <section className="main_section_1">
               {apiDatas.map((item) => {
