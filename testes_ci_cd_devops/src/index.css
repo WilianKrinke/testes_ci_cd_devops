@@ -15,6 +15,27 @@ body {
   margin: 0px;
 }
 
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(107, 107, 107) rgb(216, 216, 216);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(216, 216, 216);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(151, 151, 151);
+  border-radius: 20px;
+  border: 3px solid rgb(216, 216, 216);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

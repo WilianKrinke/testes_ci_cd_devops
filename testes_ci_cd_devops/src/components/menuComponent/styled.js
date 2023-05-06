@@ -1,4 +1,4 @@
-import { BiMenuAltRight } from "react-icons/bi";
+import { HiOutlineMenu } from "react-icons/hi";
 import { VscChromeClose } from "react-icons/vsc";
 import styled from 'styled-components';
 import { HideHamb, ShowHamb, turnOff, turnOn } from './keyframes';
@@ -30,17 +30,17 @@ export const IconClose = styled(VscChromeClose)`
     cursor: pointer;
     position: fixed; 
     top: 18px;
-    right: ${props => props.$isopen ? '-50px' : '5px'};   
+    right: ${props => props.$isopen ? '-50px' : '25px'};   
     transition: all .3s ease-in-out;
     animation: ${props => props.$isopen ? turnOn : turnOff} .3s ease-in-out forwards;
 `
 
-export const IconHamburguer = styled(BiMenuAltRight)`
+export const IconHamburguer = styled(HiOutlineMenu)`
     font-size: 56px;
     position: fixed;
     cursor: pointer;
     top: 15px;
-    right: 5px;
+    right: 25px;
     transition: all .5s ease-in-out;
     color: "#030303";
     animation:${props => props.$isopen? HideHamb : ShowHamb} .3s ease-in-out forwards;
