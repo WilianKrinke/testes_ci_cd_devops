@@ -1,13 +1,28 @@
-import React from 'react';
-import { StyledNav } from './styled';
+import React from "react";
+import {useDetectClickOutside} from 'react-detect-click-outside'
+import {  useDispatch, useSelector } from "react-redux";
+import { ContainerMenu } from "./styled.js";
+import {changeTo} from '../../features/menuState/menuStateChange.js'
 
-const Index = ({shownav}) => {
-    return (
 
-        <StyledNav shownav={false}>
+const Menu = () => {
+  const state = useSelector((state) => state.menuState.value);
+  const dispatch = useDispatch();
 
-        </StyledNav>
-    );
-}
+  const clickOutMenu = () => {
+    dispatch(changeTo(false));
+  };
 
-export default Index;
+  const ref = useDetectClickOutside({ onTriggered: clickOutMenu });
+
+
+  return (
+    <>
+      <ContainerMenu $isopen={state} ref={ref}>
+        
+      </ContainerMenu>
+    </>
+  );
+};
+
+export default Menu;

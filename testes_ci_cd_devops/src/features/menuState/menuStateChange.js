@@ -6,8 +6,15 @@ export const menuStatesChange = createSlice({
         value: false
     },
     reducers:{
-        changeTo: (state) => {
-            state.value = !state.value
+        changeTo: function (state) {
+
+            if (state.value === true) {
+                //fechou por fora ou pelo icone
+                state.value = false
+            } else {
+                // abriu menu como o icone
+                state.value = !state.value
+            }
         }
     }
 })
