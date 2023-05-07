@@ -1,36 +1,70 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const Index = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      name: undefined,
+      age: undefined,
+      email: undefined,
+      eyeColor: undefined,
+      gender: "masculino",
+      isActive: true,
+      friends: undefined,
+    },
+  });
+
+  const handleForm = (data) => {
+    console.log(data);
+  };
+
   return (
     <section>
-      <form action="" method="post">
+      <form onSubmit={handleSubmit(handleForm)}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" name="name" id="name" />
+          <input {...register("name")} />
         </div>
 
         <div>
           <label htmlFor="age">Age:</label>
-          <input type="text" name="age" id="age" />
+          <input {...register("age")} />
         </div>
 
         <div>
           <label htmlFor="email">E-mail:</label>
-          <input type="text" name="email" id="email" />
+          <input {...register("email")} />
         </div>
 
         <div>
           <label htmlFor="eyeColor">Eye Color:</label>
-          <input type="text" name="eyeColor" id="eyeColor" />
+          <input {...register("eyeColor")} />
         </div>
 
         <div>
           <fieldset>
             <legend>Genero</legend>
-            <input type="radio" name="gender" id="gender1" value="masculino" />
+            <input
+              type="radio"
+              name="gender"
+              id="gender1"
+              value={"masculino"}
+              {...register("gender")}
+            />
             <label htmlFor="gender1">Masculino</label>
 
-            <input type="radio" name="gender" id="gender2" value="feminino" />
+            <input
+              type="radio"
+              name="gender"
+              id="gender2"
+              value={"feminino"}
+              {...register("gender")}
+            />
             <label htmlFor="gender2">Feminino</label>
           </fieldset>
         </div>
@@ -43,11 +77,17 @@ const Index = () => {
               id="true"
               name="active"
               value={true}
-              defaultChecked
+              {...register("active")}
             />
             <label htmlFor="true">True</label>
 
-            <input type="radio" id="false" name="active" value={false} />
+            <input
+              type="radio"
+              id="false"
+              name="active"
+              value={false}
+              {...register("active")}
+            />
             <label htmlFor="false">False</label>
           </fieldset>
         </div>
@@ -60,13 +100,15 @@ const Index = () => {
             cols="30"
             rows="10"
             maxLength="144"
+            required
             // resize: none css
             placeholder="Digite os amigos separados por ponto e virgula..."
+            {...register("amigos")}
           ></textarea>
         </div>
 
         <div>
-            <button>Enviar: </button>
+          <input type="submit" />
         </div>
       </form>
     </section>
