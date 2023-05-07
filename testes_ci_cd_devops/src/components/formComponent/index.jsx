@@ -5,7 +5,7 @@ const Index = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    setError,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -28,22 +28,36 @@ const Index = () => {
       <form onSubmit={handleSubmit(handleForm)}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input {...register("name")} />
+          <input {...register("name", { required: "Name required" })} />
+          {errors.name && <p>{errors.name.message}</p>}
         </div>
 
         <div>
           <label htmlFor="age">Age:</label>
-          <input {...register("age")} />
+          <input {...register("age", { required: "Age is required" })} />
+          {errors.age && <p>{errors.age.message}</p>}
         </div>
 
         <div>
           <label htmlFor="email">E-mail:</label>
-          <input {...register("email")} />
+          <input
+            {...register("email", {
+              required: "E-mail is required",
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                message: "Enter a valid e-mail",
+              },
+            })}
+          />
+          {errors.email && <p>{errors.email.message}</p>}
         </div>
 
         <div>
           <label htmlFor="eyeColor">Eye Color:</label>
-          <input {...register("eyeColor")} />
+          <input
+            {...register("eyeColor", { required: "EyeColor is required" })}
+          />
+          {errors.eyeColor && <p>{errors.eyeColor.message}</p>}
         </div>
 
         <div>
@@ -99,9 +113,6 @@ const Index = () => {
             id="amigos"
             cols="30"
             rows="10"
-            maxLength="144"
-            required
-            // resize: none css
             placeholder="Digite os amigos separados por ponto e virgula..."
             {...register("amigos")}
           ></textarea>
