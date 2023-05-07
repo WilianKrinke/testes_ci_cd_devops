@@ -1,5 +1,6 @@
 import React from "react";
 import { useDetectClickOutside } from "react-detect-click-outside";
+import { Link } from 'react-router-dom'
 import { ContainerMenu, IconClose, IconHamburguer } from "./styled.js";
 import { useState } from "react";
 
@@ -27,6 +28,8 @@ const Menu = () => {
       <ContainerMenu $isopen={menuState} ref={ref}>
         <IconHamburguer $isopen={menuState} onClick={(e) => openMenu(e)} />
         <IconClose $isopen={!menuState} onClick={(e) => closeMenu(e)} />
+
+        <Link to={''}>To List Page</Link>
       </ContainerMenu>
     </>
   );
