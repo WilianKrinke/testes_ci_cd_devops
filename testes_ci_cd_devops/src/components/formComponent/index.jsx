@@ -1,11 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import TextField from "@mui/material/TextField";
 
 const Index = () => {
   const {
+    watch,
     register,
     handleSubmit,
-    setError,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -27,20 +28,36 @@ const Index = () => {
     <section>
       <form onSubmit={handleSubmit(handleForm)}>
         <div>
-          <label htmlFor="name">Name:</label>
-          <input {...register("name", { required: "Name required" })} />
+          <TextField
+            type="text"
+            label="Insert your Name"
+            id="filled-hidden-label-normal"
+            variant="filled"
+            size="small"
+            {...register("name", { required: "Name required" })}
+          />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="age">Age:</label>
-          <input {...register("age", { required: "Age is required" })} />
+          <TextField
+            type="text"
+            label="Insert your Age"
+            id="filled-hidden-label-normal"
+            variant="filled"
+            size="small"
+            {...register("age", { required: "Age is required" })}
+          />
           {errors.age && <p>{errors.age.message}</p>}
         </div>
 
         <div>
-          <label htmlFor="email">E-mail:</label>
-          <input
+          <TextField
+            type="email"
+            label="Insert your E-mail"
+            id="filled-hidden-label-normal"
+            variant="filled"
+            size="small"
             {...register("email", {
               required: "E-mail is required",
               pattern: {
@@ -53,8 +70,12 @@ const Index = () => {
         </div>
 
         <div>
-          <label htmlFor="eyeColor">Eye Color:</label>
-          <input
+          <TextField
+            type="text"
+            label="Insert your Eye Color"
+            id="filled-hidden-label-normal"
+            variant="filled"
+            size="small"
             {...register("eyeColor", { required: "EyeColor is required" })}
           />
           {errors.eyeColor && <p>{errors.eyeColor.message}</p>}
@@ -91,6 +112,7 @@ const Index = () => {
               id="true"
               name="active"
               value={true}
+              defaultChecked
               {...register("active")}
             />
             <label htmlFor="true">True</label>
