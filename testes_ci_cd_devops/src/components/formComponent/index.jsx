@@ -1,12 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
+import { FormLabel, Radio, RadioGroup } from "@mui/material";
 
 const Index = () => {
   const {
-    watch,
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -22,6 +23,11 @@ const Index = () => {
 
   const handleForm = (data) => {
     console.log(data);
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target);
+    setValue("gender", e.target.value);
   };
 
   return (
@@ -83,24 +89,33 @@ const Index = () => {
 
         <div>
           <fieldset>
-            <legend>Genero</legend>
-            <input
-              type="radio"
-              name="gender"
-              id="gender1"
-              value={"masculino"}
-              {...register("gender")}
-            />
-            <label htmlFor="gender1">Masculino</label>
-
-            <input
-              type="radio"
-              name="gender"
-              id="gender2"
-              value={"feminino"}
-              {...register("gender")}
-            />
-            <label htmlFor="gender2">Feminino</label>
+            <FormLabel>Gender</FormLabel>
+            <RadioGroup
+              defaultValue="masculino"
+              name="controlled-radio-buttons-group"
+              onChange={handleChange}
+              sx={{
+                my: 0,
+                width: "150px",
+                color: "#000",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <div>
+                <Radio value="masculino" label="Masculino" name="masculino" id="masculino"/>
+                <label htmlFor="masculino">Masculino</label>
+              </div>
+              <div>
+                <Radio value="feminino" label="Feminino" name="feminino" id="feminino"/>
+                <label htmlFor="feminino">Feminino</label>
+              </div>
+              <div>
+                <Radio value="outro" label="Outro" name="outro" id="outro"/>
+                <label htmlFor="outro">Outro</label>
+              </div>
+            </RadioGroup>
           </fieldset>
         </div>
 
