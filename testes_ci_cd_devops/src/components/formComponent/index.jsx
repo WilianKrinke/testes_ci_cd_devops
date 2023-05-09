@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { FormLabel, Radio, RadioGroup } from "@mui/material";
 import Textarea from "@mui/joy/Textarea";
+import "./styled.css";
 
 const Index = () => {
   const {
@@ -36,8 +37,8 @@ const Index = () => {
 
   return (
     <section>
-      <form onSubmit={handleSubmit(handleForm)}>
-        <div>
+      <form onSubmit={handleSubmit(handleForm)} className="form_class">
+        <div className="div_text_field">
           <TextField
             type="text"
             label="Insira seu Nome"
@@ -47,9 +48,7 @@ const Index = () => {
             {...register("name", { required: "Nome é Obrigatório" })}
           />
           {errors.name && <p>{errors.name.message}</p>}
-        </div>
 
-        <div>
           <TextField
             type="text"
             label="Insira sua idade"
@@ -59,9 +58,7 @@ const Index = () => {
             {...register("age", { required: "Idade é Obrigatório" })}
           />
           {errors.age && <p>{errors.age.message}</p>}
-        </div>
 
-        <div>
           <TextField
             type="email"
             label="Insira seu E-mail"
@@ -77,22 +74,22 @@ const Index = () => {
             })}
           />
           {errors.email && <p>{errors.email.message}</p>}
-        </div>
 
-        <div>
           <TextField
             type="text"
             label="Insira a cor dos seus olhos ^^"
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("eyeColor", { required: "Cor dos olhos é Obrigatório" })}
+            {...register("eyeColor", {
+              required: "Cor dos olhos é Obrigatório",
+            })}
           />
           {errors.eyeColor && <p>{errors.eyeColor.message}</p>}
         </div>
 
-        <div>
-          <fieldset>
+        <fieldset className="radio_group">
+          <div className="div_radio_genero">
             <FormLabel>Gênero: </FormLabel>
             <RadioGroup
               defaultValue="masculino"
@@ -130,11 +127,8 @@ const Index = () => {
                 <label htmlFor="outro">Outro</label>
               </div>
             </RadioGroup>
-          </fieldset>
-        </div>
-
-        <div>
-          <fieldset>
+          </div>
+          <div className="div_radio_ativo">
             <FormLabel>Está Ativo: </FormLabel>
             <RadioGroup
               defaultValue={true}
@@ -158,17 +152,17 @@ const Index = () => {
                 <label htmlFor="false">Não Ativo</label>
               </div>
             </RadioGroup>
-          </fieldset>
-        </div>
+          </div>
+        </fieldset>
 
-        <div style={{display: 'flex', justifyContent:'flex-start', flexDirection:'row', alignItems:'center'}}>
+        <div className="div_radio_ativo">
           <FormLabel>Amigos: </FormLabel>
           <Textarea
-            placeholder="Placeholder"
+            placeholder="Inserir amigos separados por virgula. Ex: fulano, ciclano"
             minRows={2}
             {...register("amigos")}
             sx={{
-              width: '400px'
+              width: "400px",
             }}
           />
         </div>
