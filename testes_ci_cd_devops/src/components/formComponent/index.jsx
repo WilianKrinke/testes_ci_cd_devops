@@ -2,10 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { FormLabel, Radio, RadioGroup } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
+// import Button from "@mui/material/Button";
 import Textarea from "@mui/joy/Textarea";
 import "./styled.css";
 
 const Index = () => {
+
+  const [loading, setLoading] = React.useState(false);
   const {
     register,
     handleSubmit,
@@ -34,6 +38,10 @@ const Index = () => {
   const handleChangeActive = (e) => {
     setValue("ativo", e.target.value);
   };
+
+  const handleSubmitDatas = () => {
+    setLoading(true);
+  }
 
   return (
     <section>
@@ -155,7 +163,7 @@ const Index = () => {
           </div>
         </fieldset>
 
-        <div className="div_radio_ativo">
+        <div className="div_text_area">
           <FormLabel>Amigos: </FormLabel>
           <Textarea
             placeholder="Inserir amigos separados por virgula. Ex: fulano, ciclano"
@@ -163,12 +171,24 @@ const Index = () => {
             {...register("amigos")}
             sx={{
               width: "400px",
+              height: "200px",
             }}
           />
         </div>
 
         <div>
-          <input type="submit" />
+          {/* <Button variant="contained" color="success" type='submit'>
+            Enviar
+          </Button> */}
+          <LoadingButton
+            onClick={handleSubmitDatas}
+            loading={loading}
+            loadingIndicator="Loading…"
+            variant="outlined"
+            className="button_send_satas"
+          >
+            <span>Send datas</span>
+          </LoadingButton>
         </div>
       </form>
     </section>
