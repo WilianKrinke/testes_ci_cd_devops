@@ -4,7 +4,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     padding: 10px;
-    border: 1px solid #000;
+
 }
 
 .div_text_field {
@@ -12,53 +12,76 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    border: 1px solid #000;
-    padding: 10px;
-    height: 320px;
+
+    height: 350px;
     width: 320px;
     margin: 10px 0px;
 }
 
-.radio_group{
+.radio_group {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    border: 1px solid #000;
+    border: none;
     padding: 10px;
     width: 320px;
 }
 
-.div_radio_genero{
+.div_radio_genero {
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    border: 1px solid #000;
-    margin: 10px 0px;
+    border-top: 1px solid #000;
+    margin: 10px 0px 0px 0px;
+    padding-top: 20px;
 }
 
-.div_radio_ativo{
+.div_radio_ativo {
+    width: 400px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    border: 1px solid #000;
-    margin: 10px 0px;
-    
-}
-
-.div_text_area{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex-direction: column;
-    border: 1px solid #000;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
     margin: 10px 0px;
     padding: 10px;
-    height: 320px;
+
+
 }
 
-.button_send_datas{
-    /*  */
+.div_text_area {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 10px 0px;
+    padding: 10px;
+    height: 300px;
+}
+
+.button_send_datas {
+    background-color: #98ffcc !important;
+    outline: none !important;
+    border: 1px solid #cfcfcf !important;
+}
+
+.label_pointer{
+    cursor: pointer;
+}
+
+.error_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 200px;
+    height: 20px;
+}
+
+.error_message {
+    color: #ff0000;
 }

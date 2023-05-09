@@ -3,13 +3,13 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import { FormLabel, Radio, RadioGroup } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
-// import Button from "@mui/material/Button";
 import Textarea from "@mui/joy/Textarea";
 import "./styled.css";
 
 const Index = () => {
-
   const [loading, setLoading] = React.useState(false);
+  const [loadingString, setLoadingString] = React.useState("Enviar Dados");
+
   const {
     register,
     handleSubmit,
@@ -29,6 +29,14 @@ const Index = () => {
 
   const handleForm = (data) => {
     console.log(data);
+    setLoading(true);
+    // tempo de inserção dos dados
+    setLoadingString("Dados Inseridos");
+    setLoading(false);
+
+    setTimeout(() => {
+      setLoadingString("Enviar Dados");
+    }, 2000);
   };
 
   const handleChangeGender = (e) => {
@@ -38,10 +46,6 @@ const Index = () => {
   const handleChangeActive = (e) => {
     setValue("ativo", e.target.value);
   };
-
-  const handleSubmitDatas = () => {
-    setLoading(true);
-  }
 
   return (
     <section>
@@ -53,9 +57,13 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("name", { required: "Nome é Obrigatório" })}
+            {...register("nome", { required: "Nome é Obrigatório" })}
           />
-          {errors.name && <p>{errors.name.message}</p>}
+          <div className="error_div">
+            {errors.name && (
+              <p className="error_message">{errors.name.message}</p>
+            )}
+          </div>
 
           <TextField
             type="text"
@@ -63,9 +71,13 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("age", { required: "Idade é Obrigatório" })}
+            {...register("idade", { required: "Idade é Obrigatório" })}
           />
-          {errors.age && <p>{errors.age.message}</p>}
+          <div className="error_div">
+            {errors.age && (
+              <p className="error_message">{errors.age.message}</p>
+            )}
+          </div>
 
           <TextField
             type="email"
@@ -77,11 +89,15 @@ const Index = () => {
               required: "E-mail é Obrigatório",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                message: "Enter a valid e-mail",
+                message: "Insira um e-mail válido",
               },
             })}
           />
-          {errors.email && <p>{errors.email.message}</p>}
+          <div className="error_div">
+            {errors.email && (
+              <p className="error_message">{errors.email.message}</p>
+            )}
+          </div>
 
           <TextField
             type="text"
@@ -89,11 +105,15 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("eyeColor", {
+            {...register("corOlho", {
               required: "Cor dos olhos é Obrigatório",
             })}
           />
-          {errors.eyeColor && <p>{errors.eyeColor.message}</p>}
+          <div className="error_div">
+            {errors.eyeColor && (
+              <p className="error_message">{errors.eyeColor.message}</p>
+            )}
+          </div>
         </div>
 
         <fieldset className="radio_group">
@@ -119,7 +139,9 @@ const Index = () => {
                   name="masculino"
                   id="masculino"
                 />
-                <label htmlFor="masculino">Masculino</label>
+                <label htmlFor="masculino" className="label_pointer">
+                  Masculino
+                </label>
               </div>
               <div>
                 <Radio
@@ -128,11 +150,15 @@ const Index = () => {
                   name="feminino"
                   id="feminino"
                 />
-                <label htmlFor="feminino">Feminino</label>
+                <label htmlFor="feminino" className="label_pointer">
+                  Feminino
+                </label>
               </div>
               <div>
                 <Radio value="outro" label="Outro" name="outro" id="outro" />
-                <label htmlFor="outro">Outro</label>
+                <label htmlFor="outro" className="label_pointer">
+                  Outro
+                </label>
               </div>
             </RadioGroup>
           </div>
@@ -153,11 +179,15 @@ const Index = () => {
             >
               <div>
                 <Radio value={true} label="true" name="true" id="true" />
-                <label htmlFor="true">Ativo</label>
+                <label htmlFor="true" className="label_pointer">
+                  Ativo
+                </label>
               </div>
               <div>
                 <Radio value={false} label="false" name="false" id="false" />
-                <label htmlFor="false">Não Ativo</label>
+                <label htmlFor="false" className="label_pointer">
+                  Não Ativo
+                </label>
               </div>
             </RadioGroup>
           </div>
@@ -177,18 +207,14 @@ const Index = () => {
         </div>
 
         <div>
-          {/* <Button variant="contained" color="success" type='submit'>
-            Enviar
-          </Button> */}
           <LoadingButton
-            onClick={handleSubmitDatas}
             loading={loading}
             loadingIndicator="Loading…"
             variant="outlined"
             className="button_send_datas"
+            type="submit"
           >
-            {/* Inserir condições de não envio, trafego, e dados inseridos, false null true */}
-            <span>Send datas</span>
+            <span>{loadingString}</span>
           </LoadingButton>
         </div>
       </form>
