@@ -185,8 +185,9 @@ const Index = () => {
             loading={loading}
             loadingIndicator="Loading…"
             variant="outlined"
-            className="button_send_satas"
+            className="button_send_datas"
           >
+            {/* Inserir condições de não envio, trafego, e dados inseridos, false null true */}
             <span>Send datas</span>
           </LoadingButton>
         </div>
