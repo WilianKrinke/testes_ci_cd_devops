@@ -1,5 +1,6 @@
 import { HiOutlineMenu } from "react-icons/hi";
 import { VscChromeClose } from "react-icons/vsc";
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import { HideHamb, ShowHamb, turnOff, turnOn } from './keyframes';
 
@@ -46,7 +47,7 @@ export const IconHamburguer = styled(HiOutlineMenu)`
     animation:${props => props.$isopen? HideHamb : ShowHamb} .3s ease-in-out forwards;
 `
 
-export const ContainerLinks = styled.nav`
+export const ContainerLinks = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,4 +89,5 @@ export const ContainerLinks = styled.nav`
         }
     }
 `
+
 
