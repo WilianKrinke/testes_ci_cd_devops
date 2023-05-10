@@ -37,13 +37,13 @@ const Menu = () => {
         <ContainerLinks>
           <ul>
             <li>
-              <Link to={"/"}>To Create Page</Link>
+              <Link to={"/"}>Create Page</Link>
             </li>
             <li>
-              <Link to={"/list-page"}>To List Page</Link>
+              <Link to={"/list-page"}>List Page</Link>
             </li>
             <li>
-              <Link to={"/edit-page"}>To Edit Page</Link>
+              <Link to={"/edit-page"}>Edit Page</Link>
             </li>
           </ul>
         </ContainerLinks>
