@@ -7,9 +7,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
   max-width: 100vw;
+  background: rgb(255,237,177);
+background: linear-gradient(25deg, rgba(255,237,177,1) 27%, rgba(9,85,121,1) 100%);
 }
 
-*{
+
+
+* {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
