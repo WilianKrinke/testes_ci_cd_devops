@@ -42,6 +42,9 @@ const Menu = () => {
             <li>
               <Link to={"/list-page"}>To List Page</Link>
             </li>
+            <li>
+              <Link to={"/edit-page"}>To Edit Page</Link>
+            </li>
           </ul>
         </ContainerLinks>
       </ContainerMenu>
