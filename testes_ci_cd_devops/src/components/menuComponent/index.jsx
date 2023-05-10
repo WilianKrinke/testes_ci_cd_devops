@@ -29,7 +29,8 @@ const Menu = () => {
         <IconHamburguer $isopen={menuState} onClick={(e) => openMenu(e)} />
         <IconClose $isopen={!menuState} onClick={(e) => closeMenu(e)} />
 
-        <Link to={''}>To List Page</Link>
+        <Link to={'/'}>To Create Page</Link>
+        <Link to={'/list-page'}>To List Page</Link>
       </ContainerMenu>
     </>
   );
