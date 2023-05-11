@@ -17,13 +17,13 @@ const Index = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      nome: undefined,
-      idade: undefined,
+      name: undefined,
+      age: undefined,
       email: undefined,
-      corOlho: undefined,
-      genero: "masculino",
-      ativo: true,
-      amigos: undefined,
+      eyeColor: undefined,
+      gender: "masculino",
+      isActive: true,
+      friends: undefined,
     },
   });
 
@@ -40,11 +40,11 @@ const Index = () => {
   };
 
   const handleChangeGender = (e) => {
-    setValue("genero", e.target.value);
+    setValue("gender", e.target.value);
   };
 
   const handleChangeActive = (e) => {
-    setValue("ativo", e.target.value);
+    setValue("isActive", e.target.value);
   };
 
   return (
@@ -57,11 +57,11 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("nome", { required: "Nome é Obrigatório" })}
+            {...register("name", { required: "Nome é Obrigatório" })}
           />
           <div className="error_div">
-            {errors.nome && (
-              <p className="error_message">{errors.nome.message}</p>
+            {errors.name && (
+              <p className="error_message">{errors.name.message}</p>
             )}
           </div>
 
@@ -71,11 +71,11 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("idade", { required: "Idade é Obrigatório" })}
+            {...register("age", { required: "Idade é Obrigatório" })}
           />
           <div className="error_div">
-            {errors.idade && (
-              <p className="error_message">{errors.idade.message}</p>
+            {errors.age && (
+              <p className="error_message">{errors.age.message}</p>
             )}
           </div>
 
@@ -105,13 +105,13 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            {...register("corOlho", {
+            {...register("eyeColor", {
               required: "Cor dos olhos é Obrigatório",
             })}
           />
           <div className="error_div">
-            {errors.corOlho && (
-              <p className="error_message">{errors.corOlho.message}</p>
+            {errors.eyeColor && (
+              <p className="error_message">{errors.eyeColor.message}</p>
             )}
           </div>
         </div>
