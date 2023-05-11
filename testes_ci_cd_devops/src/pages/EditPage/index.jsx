@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import getDatas from "../../utils/getDatasFromApi/getDatasFromApi";
 import HeaderComponent from "../../components/headerComponent";
 import FooterComponent from "../../components/footerComponent";
+import Menu from "../../components/menuComponent";
 
 const Index = () => {
   const [apiDatas, setapiDatas] = useState([]);
@@ -26,6 +27,7 @@ const Index = () => {
         </>
       ) : (
         <>
+          <Menu />
           <HeaderComponent title={"Edit Page"} />
 
           <main className="main_general_style">
@@ -51,7 +53,7 @@ const Index = () => {
               </table>
             </section>
           </main>
-          <FooterComponent/>
+          <FooterComponent />
         </>
       )}
     </>
