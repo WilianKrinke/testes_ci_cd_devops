@@ -20,8 +20,6 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
 }
 
-
-
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -40,13 +38,13 @@ input:-webkit-autofill {
 }
 
 *::-webkit-scrollbar-track {
-  background: rgb(216, 216, 216);
+  background: #00000000;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: rgb(151, 151, 151);
   border-radius: 20px;
-  border: 3px solid rgb(216, 216, 216);
+  border: 3px solid #00000000;
 }
 
 code {
