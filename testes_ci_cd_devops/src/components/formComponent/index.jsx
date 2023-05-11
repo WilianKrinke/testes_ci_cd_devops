@@ -57,7 +57,6 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
-            className="class_textField_name"
             {...register("nome", { required: "Nome é Obrigatório" })}
           />
           <div className="error_div">
