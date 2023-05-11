@@ -57,11 +57,12 @@ const Index = () => {
             id="filled-hidden-label-normal"
             variant="filled"
             size="small"
+            className="class_textField_name"
             {...register("nome", { required: "Nome é Obrigatório" })}
           />
           <div className="error_div">
-            {errors.name && (
-              <p className="error_message">{errors.name.message}</p>
+            {errors.nome && (
+              <p className="error_message">{errors.nome.message}</p>
             )}
           </div>
 
@@ -74,8 +75,8 @@ const Index = () => {
             {...register("idade", { required: "Idade é Obrigatório" })}
           />
           <div className="error_div">
-            {errors.age && (
-              <p className="error_message">{errors.age.message}</p>
+            {errors.idade && (
+              <p className="error_message">{errors.idade.message}</p>
             )}
           </div>
 
@@ -110,8 +111,8 @@ const Index = () => {
             })}
           />
           <div className="error_div">
-            {errors.eyeColor && (
-              <p className="error_message">{errors.eyeColor.message}</p>
+            {errors.corOlho && (
+              <p className="error_message">{errors.corOlho.message}</p>
             )}
           </div>
         </div>
