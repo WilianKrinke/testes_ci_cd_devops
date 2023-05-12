@@ -1,25 +1,13 @@
-.table_class {
-    border-collapse: collapse;
-    text-align: center;
-    width: 100%;    
-}
-
-thead tr:first-child{
-    background-color: rgba(198, 185, 255, 0.205);
-}
-
-tbody tr:nth-child(even){
-    background-color: rgba(198, 185, 255, 0.205);
-}
-
-th {
+.section_edit{
     border: 1px solid #000;
-    font-size: 22px;
-    padding: 10px;
+    padding: 20px;
 }
 
-td {
+.div_row_list{
     border: 1px solid #000;
-    height: 20px;
-    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
 }

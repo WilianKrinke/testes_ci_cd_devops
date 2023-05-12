@@ -1,29 +1,25 @@
 import React from "react";
-import './edit.css'
+import "./edit.css";
 
 const Index = ({ apiDatas }) => {
   return (
     <>
-      <section>
-        <table className="table_class">
-          <thead>
-            <tr>
-              <th>Nome Completo</th>
-              <th>E-mail</th>
-            </tr>
-          </thead>
-          <tbody>
-            {apiDatas !== undefined &&
-              apiDatas.map((item) => {
-                return (
-                  <tr key={item._id}>
-                    <td>{item.name}</td>
-                    <td>{item.email}</td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
+      <section className="section_edit">
+        {apiDatas !== undefined &&
+          apiDatas.map((item) => {
+            return (
+              <div key={item._id} className="div_row_list">
+                <div>
+                  <p>{item.name}</p>
+                  <p>{item.email}</p>
+                </div>
+                <div>
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </div>
+              </div>
+            );
+          })}
       </section>
     </>
   );
