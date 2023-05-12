@@ -1,4 +1,5 @@
 import React from "react";
+import './edit.css'
 
 const Index = ({ apiDatas }) => {
   return (
