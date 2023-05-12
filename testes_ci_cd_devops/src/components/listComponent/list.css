@@ -1,0 +1,16 @@
+.main_section_1{
+    min-height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.div_card{
+    border: 1px solid #000;
+    width: 320px;
+    height: 350px;
+    margin: 10px 10px;
+    padding: 5px;
+}

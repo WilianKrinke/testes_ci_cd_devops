@@ -3,7 +3,8 @@ import "../styles.css";
 import getDatas from "../../utils/getDatasFromApi/getDatasFromApi";
 import HeaderComponent from "../../components/headerComponent";
 import FooterComponent from "../../components/footerComponent";
-import Menu from '../../components/menuComponent/index'
+import Menu from "../../components/menuComponent/index";
+import ListComponent from "../../components/listComponent";
 
 const Index = () => {
   const [apiDatas, setapiDatas] = useState([]);
@@ -27,17 +28,9 @@ const Index = () => {
       ) : (
         <>
           <Menu />
-          <HeaderComponent title={"Listagem"} />             
+          <HeaderComponent title={"Listagem"} />;
           <main className="main_general_style">
-            <section className="main_section_1">
-              {apiDatas.map((item) => {
-                return (
-                  <div key={item._id} className="div_card">
-                    <h3>{item.name}</h3>
-                  </div>
-                );
-              })}
-            </section>
+            <ListComponent apiDatas={apiDatas} />
           </main>
           <FooterComponent />
         </>

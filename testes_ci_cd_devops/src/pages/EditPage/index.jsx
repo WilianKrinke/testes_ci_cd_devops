@@ -3,6 +3,7 @@ import getDatas from "../../utils/getDatasFromApi/getDatasFromApi";
 import HeaderComponent from "../../components/headerComponent";
 import FooterComponent from "../../components/footerComponent";
 import Menu from "../../components/menuComponent";
+import EditComponent from "../../components/editComponent";
 
 const Index = () => {
   const [apiDatas, setapiDatas] = useState([]);
@@ -29,29 +30,8 @@ const Index = () => {
         <>
           <Menu />
           <HeaderComponent title={"Edit Page"} />
-
           <main className="main_general_style">
-            <section>
-              <table className="table_class">
-                <thead>
-                  <tr>
-                    <th>Nome Completo</th>
-                    <th>E-mail</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {apiDatas !== undefined &&
-                    apiDatas.map((item) => {
-                      return (
-                        <tr key={item._id}>
-                          <td>{item.name}</td>
-                          <td>{item.email}</td>
-                        </tr>
-                      );
-                    })}
-                </tbody>
-              </table>
-            </section>
+            <EditComponent apiDatas={apiDatas} />
           </main>
           <FooterComponent />
         </>
