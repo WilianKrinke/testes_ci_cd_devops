@@ -1,0 +1,25 @@
+.table_class {
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;    
+}
+
+thead tr:first-child{
+    background-color: rgba(198, 185, 255, 0.205);
+}
+
+tbody tr:nth-child(even){
+    background-color: rgba(198, 185, 255, 0.205);
+}
+
+th {
+    border: 1px solid #000;
+    font-size: 22px;
+    padding: 10px;
+}
+
+td {
+    border: 1px solid #000;
+    height: 20px;
+    padding: 10px;
+}
